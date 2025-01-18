@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>single file</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        
+        nav {
+            background-color: #333;
+            padding: 10px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            text-align: center;
+        }
+        
+        nav ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 16px;
+        }
+        
+        
+        section {
+            padding: 50px;
+            text-align: center;
+            min-height: 100vh;
+        }
+        
+        #home {
+            background-color: #f4f4f4;
+        }
+        
+        #about {
+            background-color: #eaeaea;
+        }
+        
+        #contact {
+            background-color: #dcdcdc;
+        }
+        
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        
+        footer p {
+            margin: 5px 0;
+        }
+        
+        footer a {
+            color: #ff6600; 
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <section id="home">
+        <h1>Hello. Welcome everyone.</h1>
+        <p>This is the Home section.</p>
+    </section>
+
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>This is the About section. You can know more about me here.</p>
+    </section>
+
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Feel free to reach out to us!</p>
+    </section>
+
+    <footer>
+        <p> All rights reserved.</p>
+        <p>Follow on Social media
+            <br><a href="" target="_blank">Facebook </a> <br>
+            <a href="" target="_blank">Twitter</a> <br>
+            <a href="" target="_blank">Instagram</a><br>
+        </p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('nav ul li a');
+        
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href').substring(1);
+                    document.getElementById(targetId).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+        
+    </script>
+    
+</body>
+</html>
