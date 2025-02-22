@@ -114,3 +114,5 @@ process.on('SIGINT', () => {
         process.exit(0);
     });
 });
+
+app.use(express.static('public'));
